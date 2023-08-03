@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    env_file:
+      - ./envs/postgres.env
+    volumes:
+      - db_data_2:/var/lib/postgresql/data
+  api:
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+
+volumes:
+  db_data_2:
