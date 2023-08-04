@@ -33,7 +33,7 @@ export class UsersService {
   }
 
   async findOne(id: number) {
-    return await this.userRepo.findBy({ id });
+    return await this.userRepo.findOne({ where: { id } });
   }
 
   async findOneByEmail(email: string) {

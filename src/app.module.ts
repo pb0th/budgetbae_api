@@ -6,6 +6,8 @@ import * as path from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './shared/modules/users/users.module';
 import { AuthModule } from './shared/modules/auth/auth.module';
+import { BudgetModule } from './modules/budget/budget.module';
+import { CategoriesModule } from './modules/categories/categories.module';
 
 @Module({
   imports: [
@@ -33,6 +35,8 @@ import { AuthModule } from './shared/modules/auth/auth.module';
 
     UsersModule,
     AuthModule,
+    BudgetModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
